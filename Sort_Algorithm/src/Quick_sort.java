@@ -21,11 +21,11 @@ public class Quick_sort {
             }
         }
 
-
-        int temp = arr[i + 1];
-        arr[i + 1] = arr[end];
+        i++;
+        int temp = arr[i];
+        arr[i] = arr[end];
         arr[end] = temp;
 
-        return i + 1;
+        return i ;
     }
 }
