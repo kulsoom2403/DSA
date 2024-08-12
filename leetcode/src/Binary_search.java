@@ -44,6 +44,6 @@ public class Binary_search {
             System.out.println("Element not found.");
         }
 
-        scanner.close();
+
     }
 }
