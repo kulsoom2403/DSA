@@ -13,7 +13,7 @@ class Job {
 }
 class JobSequencing {
 
-    void printJobScheduling(Job arr[], int n) {
+    void printJobScheduling(Job[] arr, int n) {
         Arrays.sort(arr, (a, b) -> b.profit - a.profit);
 
         boolean[] result = new boolean[n];
@@ -25,9 +25,9 @@ class JobSequencing {
         }
 
         for (int i = 0; i < n; i++) {
-            // Find a free slot for this job (we start from the last possible slot)
+
             for (int j = Math.min(n, arr[i].deadline) - 1; j >= 0; j--) {
-                // Free slot found
+
                 if (result[j] == false) {
                     result[j] = true;
                     jobSequence[j] = arr[i].id;
@@ -52,7 +52,7 @@ class JobSequencing {
 
     public static void main(String args[]) {
         Job arr[] = { new Job('a', 2, 100), new Job('b', 1, 19),
-                new Job('c', 2, 27), new Job('d', 1, 25),
+                new Job('c', 2, 20), new Job('d', 1, 25),
                 new Job('e', 3, 15) };
         int n = arr.length;
 
