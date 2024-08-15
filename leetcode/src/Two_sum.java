@@ -3,23 +3,23 @@ import java.util.HashMap;
 public class Two_sum {
     static class Solution {
         public int[] twoSum(int[] nums, int target) {
-            HashMap<Integer, Integer> hm = new HashMap<Integer, Integer>();
-            for (int i = 0; i < nums.length; i++) {
-                int res = target - nums[i];
-                if (hm.containsKey(res)) {
-                    int[] arr = {hm.get(res), i};
-                    return arr;
+            for(int i=0;i<nums.length;i++){
+                for(int j=i+1;j<nums.length;j++){
+                    if(nums[i]+nums[j]==target){
+                        int[] a={i,j};
+                        return a;
+                    }
                 }
-                hm.put(nums[i], i);
             }
             return null;
+
         }
     }
 
     public static void main(String[] args) {
         Solution sol = new Solution();
         int[] nums = {2, 7, 11, 15};
-        int target = 9;
+        int target = 13;
 
         int[] result = sol.twoSum(nums, target);
 

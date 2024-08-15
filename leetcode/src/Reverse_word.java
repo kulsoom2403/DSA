@@ -12,6 +12,6 @@ public class Reverse_word {
     }
 
     public static void main(String[] args) {
-        System.out.println ( reverseWords ( "i am Umme kulsoom" ) );
+        System.out.println ( reverseWords ( "i am " ) );
     }
 }
