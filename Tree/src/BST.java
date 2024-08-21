@@ -1,4 +1,3 @@
-import java.security.Key;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
@@ -28,9 +27,10 @@ public class BST {
         mybst.inorder(mybst.root);
         System.out.println("--------------------------postorder-------------------");
         mybst.postorder(mybst.root);
-        System.out.println("--------------------------level order-------------------");
+        System.out.println("--------------------------BFS order-------------------");
         mybst.level(mybst.root);
-
+        System.out.println("----------------------------DFS order-------------------");
+        mybst.depthFirstSearch(mybst.root);
     }
 
     void traverse(Node node) {
@@ -125,19 +125,23 @@ public class BST {
             }
         }
     }
-    public void dfs(Node node){
-        Stack<Node> st=new Stack<>();
+    public void depthFirstSearch(Node node) {
 
-        st.push(node);
 
-        while(!st.isEmpty()){
-            Node element=st.pop();
-            System.out.println(element.key);
+        Stack<Node> stack = new Stack<>();
+        stack.push(node);
 
-            if(element.left!=null){
-                
+        while (!stack.isEmpty()) {
+            Node current = stack.pop();
+            System.out.println(current.key);
+
+
+            if (current.right != null) {
+                stack.push(current.right);
             }
-
+            if (current.left != null) {
+                stack.push(current.left);
+            }
         }
     }
 
