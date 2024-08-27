@@ -10,14 +10,14 @@ public class BST {
 
         BST mybst = new BST();
 
-        mybst.insert(mybst.root,10);
-        mybst.insert(mybst.root,15);
-        mybst.insert(mybst.root,5);
-        mybst.insert(mybst.root,12);
+        mybst.insert(mybst.root,4);
         mybst.insert(mybst.root,2);
-        mybst.insert(mybst.root,8);
+        mybst.insert(mybst.root,7);
         mybst.insert(mybst.root,1);
-        mybst.insert(mybst.root,13);
+        mybst.insert(mybst.root,3);
+        mybst.insert(mybst.root,6);
+        mybst.insert(mybst.root,9);
+//        mybst.insert(mybst.root,13);
 
 
 
@@ -31,6 +31,8 @@ public class BST {
         mybst.level(mybst.root);
         System.out.println("----------------------------DFS order-------------------");
         mybst.depthFirstSearch(mybst.root);
+        System.out.println("---------------------a b c-------------------------");
+        mybst.lca(mybst.root);
     }
 
     void traverse(Node node) {
@@ -117,11 +119,12 @@ public class BST {
 
             System.out.println(current.key);
 
-            if(current.left != null){
-                q.add(current.left);
-            }
+
             if(current.right != null){
                 q.add(current.right);
+            }
+            if(current.left != null){
+                q.add(current.left);
             }
         }
     }
@@ -144,6 +147,18 @@ public class BST {
             }
         }
     }
+    public void lca(Node node){
+        Queue<Node> queue = new LinkedList<>();
+
+        Node p =new Node(7);
+        Node q=new Node(2);
+
+
+
+        
+
+    }
+
 
 }
 
