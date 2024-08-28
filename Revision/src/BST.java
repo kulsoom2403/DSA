@@ -11,24 +11,25 @@ public class BST {
 
         BST mybst = new BST();
 
-        mybst.insert(mybst.root,10);
-        mybst.insert(mybst.root,15);
-        mybst.insert(mybst.root,5);
-        mybst.insert(mybst.root,12);
-        mybst.insert(mybst.root,2);
-        mybst.insert(mybst.root,8);
-        mybst.insert(mybst.root,1);
-        mybst.insert(mybst.root,13);
+        mybst.insert(mybst.root, 10);
+        mybst.insert(mybst.root, 15);
+        mybst.insert(mybst.root, 5);
+        mybst.insert(mybst.root, 12);
+        mybst.insert(mybst.root, 2);
+        mybst.insert(mybst.root, 8);
+        mybst.insert(mybst.root, 1);
+        mybst.insert(mybst.root, 13);
 
 
-
-      System.out.println("-------------------------pre order-------------------");
+        System.out.println("-------------------------pre order-------------------");
         mybst.traverse(mybst.root);
         System.out.println("-------------------------inorder----------------------");
         mybst.inorder(mybst.root);
         System.out.println("--------------------------postorder-------------------");
         mybst.postorder(mybst.root);
         System.out.println("--------------------------level order-------------------");
+        mybst.level(mybst.root);
+        System.out.println("--------------------------dfs order-------------------");
         mybst.level(mybst.root);
 
     }
@@ -77,69 +78,74 @@ public class BST {
         }
     }
 
-    public void insert(Node node,int key){
-        if(this.root == null){
+    public void insert(Node node, int key) {
+        if (this.root == null) {
             Node newNode = new Node(key);
             this.root = newNode;
 
-        }
-        else {
-            if(key < node.key){
-                if(node.left==null){
-                    Node newNode=new Node(key);
-                    node.left=newNode;
+        } else {
+            if (key < node.key) {
+                if (node.left == null) {
+                    Node newNode = new Node(key);
+                    node.left = newNode;
 
+                } else {
+                    insert(node.left, key);
                 }
-                else {
-                    insert(node.left,key);
-                }
-            }
-            else {
-                if(node.right ==  null) {
+            } else {
+                if (node.right == null) {
                     Node newNode = new Node(key);
                     node.right = newNode;
-                }
-                else {
-                    insert(node.right,key);
+                } else {
+                    insert(node.right, key);
                 }
             }
         }
     }
-    public void level(Node node){
+
+    public void level(Node node) {
         Queue<Node> q = new LinkedList<>();
 
 
         q.add(node);
 
-        while (!q.isEmpty()){
+        while (!q.isEmpty()) {
             Node current = q.poll();
 
 
             System.out.println(current.key);
 
-            if(current.left != null){
+            if (current.left != null) {
                 q.add(current.left);
             }
-            if(current.right != null){
+            if (current.right != null) {
                 q.add(current.right);
             }
         }
     }
-    public void dfs(Node node){
-        Stack<Node> st=new Stack<>();
 
-        st.push(node);
+    public void depthFirstSearch(Node node) {
 
-        while(!st.isEmpty()){
-            Node element=st.pop();
-            System.out.println(element.key);
 
-            if(element.left!=null){
-                
+        Stack<Node> stack = new Stack<>();
+        stack.push(node);
+
+        while (!stack.isEmpty()) {
+            Node current = stack.pop();
+            System.out.println(current.key);
+
+
+            if (current.right != null) {
+                stack.push(current.right);
             }
-
+            if (current.left != null) {
+                stack.push(current.left);
+            }
         }
-    }
 
+    }
 }
+
+
+
 

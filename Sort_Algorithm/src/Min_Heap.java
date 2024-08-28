@@ -1,8 +1,9 @@
 public class Min_Heap {
     public static class HeapInsertion {
         public static void insertMinHeap(int[] heap, int size, int value) {
-            heap[size] = value;  // Insert the value at the end of the heap
-            int index = size;    // Start from the inserted element
+            heap[size] = value;//0
+
+            int index = size;//10
 
             // Bubble up the value to maintain the min-heap property
             while (index > 0 && heap[index] < heap[(index - 1) / 2]) {
@@ -11,10 +12,10 @@ public class Min_Heap {
             }
         }
 
-        public static void swap(int[] heap, int i, int j) {
-            int temp = heap[i];
-            heap[i] = heap[j];
-            heap[j] = temp;
+        public static void swap(int[] heap, int value, int size) {
+            int temp = heap[value];
+            heap[value] = heap[size];
+            heap[size] = temp;
         }
 
         public static void main(String[] args) {
