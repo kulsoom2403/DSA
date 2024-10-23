@@ -6,11 +6,11 @@ import java.util.Queue;
 
 class TreeNode {
     int val;
-    TreeNode left;
-    TreeNode right;
+    TreeNode1 left;
+    TreeNode1 right;
     TreeNode() {}
     TreeNode(int val) { this.val = val; }
-    TreeNode(int val, TreeNode left, TreeNode right) {
+    TreeNode(int val, TreeNode1 left, TreeNode1 right) {
         this.val = val;
         this.left = left;
         this.right = right;
@@ -18,14 +18,14 @@ class TreeNode {
 }
 
 class Binary_tree_traversal {
-    public List<List<Integer>> levelOrder(TreeNode root) {
+    public List<List<Integer>> levelOrder(TreeNode1 root) {
         List<List<Integer>> res = new ArrayList<>();
 
         if (root == null) {
             return res;
         }
 
-        Queue<TreeNode> queue = new LinkedList<>();
+        Queue<TreeNode1> queue = new LinkedList<>();
         queue.add(root);
 
         while (!queue.isEmpty()) {
@@ -33,7 +33,7 @@ class Binary_tree_traversal {
             List<Integer> levelValues = new ArrayList<>();
 
             for (int i = 0; i < levelSize; i++) {
-                TreeNode current = queue.poll();
+                TreeNode1 current = queue.poll();
                 levelValues.add(current.val);
 
                 if (current.left != null) {
@@ -51,11 +51,11 @@ class Binary_tree_traversal {
     }
 
     public static void main(String[] args) {
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(5);
+        TreeNode1 root = new TreeNode1(1);
+        root.left = new TreeNode1(2);
+        root.right = new TreeNode1(3);
+        root.left.left = new TreeNode1(4);
+        root.left.right = new TreeNode1(5);
 
         // Create Binary_tree_traversal object and call levelOrder method
         Binary_tree_traversal solution = new Binary_tree_traversal();
