@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/DSA.iml" filepath="$PROJECT_DIR$/.idea/DSA.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Divded_and_conqure/Divded_and_conqure.iml" filepath="$PROJECT_DIR$/Divded_and_conqure/Divded_and_conqure.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Revision/Revision.iml" filepath="$PROJECT_DIR$/Revision/Revision.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sort_Algorithm/Sort_Algorithm.iml" filepath="$PROJECT_DIR$/Sort_Algorithm/Sort_Algorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tree/Tree.iml" filepath="$PROJECT_DIR$/Tree/Tree.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springboot/springboot.iml" filepath="$PROJECT_DIR$/springboot/springboot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/leetcode/string.iml" filepath="$PROJECT_DIR$/leetcode/string.iml" />
+    </modules>
+  </component>
+</project>
