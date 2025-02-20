@@ -46,8 +46,8 @@ public class Height_Binary_Search_Tree {
             int[] nums = {-10, -3, 0, 5, 9};
             TreeNode root = solution.sortedArrayToBST(nums);
 
-            // Print the tree in pre-order to see the output
-            solution.printPreOrder(root); // Expected output: -10 -3 0 5 9
+
+            solution.printPreOrder(root);
         }
 
 
