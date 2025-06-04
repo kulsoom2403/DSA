@@ -10,7 +10,7 @@ public class June_4 {
             String res ="";
             for(int i = 0; i < n;i++){
                 String s = word.substring(i,Math.min(i+n-numFriends+1,n));
-                if(res.compareTo(s)  <= 0){
+                if(res.compareTo(s) <=  0){
                     res = s;
                 }
             }
