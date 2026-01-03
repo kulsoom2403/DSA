@@ -10,7 +10,7 @@ public class jan_02 {
         }
 
     public static void main(String[] args) {
-        int[] nums = {3,2,1,2,1,3,1};
+        int[] nums = {3,2,1,1,3,1};
         jan_02 obj = new jan_02();
         int result = obj.repeatedNTimes(nums);
         System.out.println(result);
